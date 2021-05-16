@@ -4,13 +4,19 @@ import { StyleSheet, Text, View } from 'react-native';
 //import HomeScreen from './src/screens/HomeScreen'
 //import Post from './src/components/Post'
 //import carInformation from './src/assets/data/carInformation';
-import SearchResultsScreen from './src/screens/SearchResults';
+//import SearchResultsScreen from './src/screens/SearchResults';
+//import LocationSearch from './src/screens/LocationSearch';
+import RentalClient from './src/screens/Client/RentalClient';
+
 //const post1 = carInformation[0];
 
 export default function App() {
   return (
     <View>
-      <SearchResultsScreen/>
+
+      <RentalClient/>
+      {/*<LocationSearch/>*/} 
+      {/*<SearchResultsScreen/>*/} 
      {/*<HomeScreen/>*/} 
      {/*<Post post={post1}/>*/} 
     </View>

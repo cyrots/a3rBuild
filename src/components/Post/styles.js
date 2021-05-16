@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
     container:{
         marginTop: 20,
         margin: 10,
-        backgroundColor: '#f0f0f0',
+        backgroundColor: '#FFFFFF',
         borderRadius: 25,
     },
 
