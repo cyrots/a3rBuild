@@ -7,7 +7,6 @@ import {GooglePlacesAutocomplete} from 'react-native-google-places-autocomplete'
 
 const LocationSearch = (props) => {
 
-    const[inputText, setInputText] = useState('');
     const navigation = useNavigation();
     
     return(
@@ -20,10 +19,11 @@ const LocationSearch = (props) => {
                 <GooglePlacesAutocomplete
                         placeholder='Search Location'
                         onPress={(data = {GooglePlaceData}, details = {GooglePlaceDetail} = null) => {
-                            setDestinationPlace(value= {data, details})
                             // 'details' is provided when fetchDetails = true
                             console.log(data, details);
+                            navigation.navigate('Rental Client')
                         }}
+                        fetchDetails
                         styles={{
                             textInput: styles.textInput,
                         }}
@@ -31,20 +31,13 @@ const LocationSearch = (props) => {
                         query={{
                             key: 'AIzaSyD6hl1nh-mG9scBryWnwx0F0kXiSShqXHQ',
                             language: 'en',
+                            types: '(cities)',
                         }}
-                       // suppressDefaultStyles
-                       // renderRow={(item= {GooglePlaceData}) => <SuggestionRow item={item}/>}
+                        //suppressDefaultStyles
+                        //renderRow={(item= {GooglePlaceData}) => <SuggestionRow item={item}/>}
                         
                         />
             </View>
-
-            <TextInput
-                style={styles.textInput}
-                placeholder={'Location Search'}
-                value={inputText}
-                onChangeText={setInputText}
-                />
-
         </View>
 
     );
