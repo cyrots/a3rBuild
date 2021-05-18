@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { View, ImageBackground, Image, StyleSheet, Text, Pressable} from 'react-native';
-import searchResults from '../../assets/data/searchLocation';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import {useNavigation} from '@react-navigation/native';
 

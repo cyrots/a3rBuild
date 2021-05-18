@@ -3,6 +3,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from '../screens/HomeScreen';
 import SearchResults from '../screens/SearchResults';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
+import SearchResultsMap from '../screens/SearchResultsMap';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -15,7 +16,7 @@ const SearchResultsTabNavigator = (props) =>{
             }
         }}>
             <Tab.Screen name={'list'} component = {SearchResults}/>
-            <Tab.Screen name={'map'} component = {SearchResults}/>
+            <Tab.Screen name={'map'} component = {SearchResultsMap}/>
         </Tab.Navigator>
     );
 };

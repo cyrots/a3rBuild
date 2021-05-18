@@ -3,7 +3,7 @@ import { View, TextInput} from 'react-native';
 import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
 import {GooglePlacesAutocomplete} from 'react-native-google-places-autocomplete';
-//import SuggestionRow from '../LocationSearch/SuggestionRow';
+
 
 const LocationSearch = (props) => {
 
@@ -33,8 +33,7 @@ const LocationSearch = (props) => {
                             language: 'en',
                             types: '(cities)',
                         }}
-                        //suppressDefaultStyles
-                        //renderRow={(item= {GooglePlaceData}) => <SuggestionRow item={item}/>}
+                        
                         
                         />
             </View>
