@@ -12,7 +12,7 @@ export default [
   {
     id: '1',
     carName: 'SEDAN',
-    carType: 'car',
+    carType: 'Car',
     carMileage: 5,
     capacity: 4,
     price: 3400,
@@ -21,7 +21,7 @@ export default [
   {
     id: '2',
     carName: 'NISSAN',
-    carType: 'van',
+    carType: 'Van',
     carMileage: 20,
     capacity: 7,
     price: 5600,
@@ -30,7 +30,7 @@ export default [
   {
     id: '3',
     carName: 'MITSUBISHI',
-    carType: 'car',
+    carType: 'Car',
     carMileage: 40,
     capacity: 4,
     price: 5600,

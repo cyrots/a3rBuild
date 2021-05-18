@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     title:{
         fontSize: 80,
         fontWeight: 'bold',
-        color: 'red',
+        color: 'blue',
         width: '70%',
         marginLeft: 25,
 
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     },
     buttonSearch:{
         backgroundColor: '#7fe5f0',
-        width: Dimensions.get('screen').width - 20,
+        width: Dimensions.get('screen').width - 50,
         height: 50,
         borderRadius: 25,
         flexDirection: 'row',
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         position: 'absolute',
-        top: 20,
+        top: 50,
         zIndex: 100,
         elevation: 100,
 
