@@ -26,29 +26,41 @@ const PostCarouselRentalItem = (props) => {
     
     return(
         <View style={[styles.container, {width:width-60}]}>
-            <Image
-                style={styles.image}
-                source={getImage()}
-        />
             <View style={styles.innerContainer}>
-                <View style={styles.descriptionContainer}>
-                    <View style={styles.middleContainer}>
-                        <Text style={styles.type}>{post.carName}{'  '}
-                            <Ionicons name={'people-outline'} size={25}/>
-                            <Text> {post.capacity}{'  '}M{post.carMileage}k</Text>
-                        </Text>
-                        <Text style={styles.name}> {post.operator} </Text>
+                <View>
+                    <Image
+                                style={styles.image}
+                                source={getImage()}
+                            />
                     </View>
-                    <View style={styles.rightContainer}>
-                        <Ionicons name={'pricetag'} size={18} color={'#42d742'}/>
-                        <Text style={styles.price}>₱{post.price}/day</Text>
-                    </View> 
 
+                <View>
+                    <Text style={styles.type}>
+                        {post.carName}
+                    </Text>
+                        
+                    <Text style={styles.type}>
+                        Capacity:{'  '}<Ionicons name={'people-outline'} size={15}/> 
+                        <Text style={{
+                            fontWeight: 'bold',
+                        }}>
+                            {post.capacity} 
+                        </Text>
+                    </Text>
+                    <Text style={styles.type}>
+                        Mileage:{'  '} 
+                        <Text style={{
+                            fontWeight: 'bold'
+                            }}>
+                            {post.carMileage}k
+                        </Text>
+                    </Text>
+                    <Text style={styles.name} >{post.operator}</Text>
+                    <Text style={styles.price}>₱ {post.price} / day</Text>
+                </View>
             </View>
-    
-         </View>
-
         </View>
+    
     );
 };
 
