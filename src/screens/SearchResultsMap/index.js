@@ -16,16 +16,28 @@ const SearchResultsMap = (props) => {
         }
         const index = places.findIndex(place => place.id === selectedPlaceId)
         flatlist.current.scrollToIndex({index})
+
+        const selectedPlace = places[index];
+        const region = {
+            latitude: selectedPlace.coordinate.latitude,
+            longitude: selectedPlace.coordinate.longitude,
+            latitudeDelta: 0.8,
+            longitudeDelta: 0.8,
+        }
+        map.current.animateToRegion(region);  
     }, [selectedPlaceId])
+
 
     const flatlist = useRef();
     const viewConfig = useRef({itemVisiblePercentThreshold: 70})
-    const onViewChanged= useRef(initialValue=({viewableItems})=>{
+    const onViewChanged= useRef(({viewableItems})=>{
         if (viewableItems.length > 0){
             const selectedPlace = viewableItems[0].item;
             setSelectedPlaceId(selectedPlace.id)
         }
     })
+
+    const map = useRef();
     return(
         <View
             style={{
@@ -33,6 +45,7 @@ const SearchResultsMap = (props) => {
                 height: '100%',
             }}>
               <MapView
+                ref={map}
                 style={{
                     width: '100%',
                     height: '100%',                    
