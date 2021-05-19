@@ -19,6 +19,13 @@ const SearchResultsMap = (props) => {
     }, [selectedPlaceId])
 
     const flatlist = useRef();
+    const viewConfig = useRef({itemVisiblePercentThreshold: 70})
+    const onViewChanged= useRef(initialValue=({viewableItems})=>{
+        if (viewableItems.length > 0){
+            const selectedPlace = viewableItems[0].item;
+            setSelectedPlaceId(selectedPlace.id)
+        }
+    })
     return(
         <View
             style={{
@@ -59,6 +66,8 @@ const SearchResultsMap = (props) => {
                 snapToInterval={200}
                 snapToAlignment={'center'}
                 decelerationRate={'fast'}
+                viewabilityConfig={viewConfig.current}
+                onViewableItemsChanged={onViewChanged.current}
             />
            
               
