@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import {View, Text, FlatList} from 'react-native';
 import MapView, {Marker} from 'react-native-maps';
 import carInformation from '../../assets/data/carInformation';
@@ -10,6 +10,15 @@ const SearchResultsMap = (props) => {
 
     const [selectedPlaceId, setSelectedPlaceId] = useState(initialState=null);
     
+    useEffect(()=>{
+        if (!selectedPlaceId || !flatlist){
+            return;
+        }
+        const index = places.findIndex(place => place.id === selectedPlaceId)
+        flatlist.current.scrollToIndex({index})
+    }, [selectedPlaceId])
+
+    const flatlist = useRef();
     return(
         <View
             style={{
@@ -42,6 +51,7 @@ const SearchResultsMap = (props) => {
                 bottom: 40
             }}>
             <FlatList
+                ref={flatlist}
                 data={places}
                 renderItem={({item}) => <PostCarouselRentalItem post={item}/>}
                 horizontal
