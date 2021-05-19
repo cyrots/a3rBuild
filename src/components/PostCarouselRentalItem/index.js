@@ -25,7 +25,7 @@ const PostCarouselRentalItem = (props) => {
     };
     
     return(
-        <View style={[styles.container, {width:width-60}]}>
+        <View style={[styles.container, {width:width-70}]}>
             <View style={styles.innerContainer}>
                 <View>
                     <Image
@@ -34,7 +34,9 @@ const PostCarouselRentalItem = (props) => {
                             />
                     </View>
 
-                <View>
+                <View style={{
+                    fontWeight: 1,
+                }}>
                     <Text style={styles.type}>
                         {post.carName}
                     </Text>
@@ -55,8 +57,8 @@ const PostCarouselRentalItem = (props) => {
                             {post.carMileage}k
                         </Text>
                     </Text>
+                    <Text style={styles.price}>₱{post.price} / day</Text>
                     <Text style={styles.name} >{post.operator}</Text>
-                    <Text style={styles.price}>₱ {post.price} / day</Text>
                 </View>
             </View>
         </View>

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, FlatList} from 'react-native';
 import MapView, {Marker} from 'react-native-maps';
+import carInformation from '../../assets/data/carInformation';
 import places from '../../assets/data/carInformation';
 import CustomMarker from '../../components/CustomMarker';
 import PostCarouselRentalItem from '../../components/PostCarouselRentalItem';
@@ -38,9 +39,19 @@ const SearchResultsMap = (props) => {
             
             <View style={{
                 position: 'absolute',
-                bottom: 150
+                bottom: 40
             }}>
-                <PostCarouselRentalItem post={places[0]}/>
+            <FlatList
+                data={places}
+                renderItem={({item}) => <PostCarouselRentalItem post={item}/>}
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                snapToInterval={200}
+                snapToAlignment={'center'}
+                decelerationRate={'fast'}
+            />
+           
+              
             </View>
         </View>
     );
