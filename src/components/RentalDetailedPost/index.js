@@ -8,7 +8,7 @@ import {useNavigation} from '@react-navigation/native';
 import styles from './styles';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
-const DetailedPost = (props) => {
+const RentalDetailedPost = (props) => {
 
     const width = useWindowDimensions().width;
     const navigation = useNavigation();
@@ -323,4 +323,4 @@ const DetailedPost = (props) => {
     );
 };
 
-export default DetailedPost;
+export default RentalDetailedPost;

@@ -1,13 +1,20 @@
 import React from 'react';
-import { View, Text, Image, useWindowDimensions} from 'react-native';
+import { View, Text, Image, useWindowDimensions, Pressable} from 'react-native';
 import styles from './styles';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import {useNavigation} from '@react-navigation/native';
 
 
 const PostCarouselRentalItem = (props) => {
 
     const post = props.post;
     const width = useWindowDimensions().width;
+
+    const navigation = useNavigation();
+
+    const goToRentalDetailedPost = () => {
+        navigation.navigate('Rental Detailed Post', {postId: post.id})
+    };
 
     const getImage = () => {
         if (post.carName === 'MITSUBISHI'){
@@ -25,7 +32,7 @@ const PostCarouselRentalItem = (props) => {
     };
     
     return(
-        <View style={[styles.container, {width:width-70}]}>
+        <Pressable onPress={goToRentalDetailedPost} style={[styles.container, {width:width-70}]}>
             <View style={styles.innerContainer}>
                 <View>
                     <Image
@@ -61,7 +68,7 @@ const PostCarouselRentalItem = (props) => {
                     <Text style={styles.name} >{post.operator}</Text>
                 </View>
             </View>
-        </View>
+        </Pressable>
     
     );
 };

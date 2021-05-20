@@ -5,6 +5,8 @@ import LocationSearch from '../screens/LocationSearch';
 import HomeTabNavigator from '../navigation/HomeTabNavigator';
 import RentalClientSearchFilter from '../screens/RentalClientSearchFilter';
 import SearchChoice from '../screens/SearchChoice';
+import RentalPostDetails from '../screens/RentalPostDetails';
+import RentalDetailedPost from '../components/RentalDetailedPost';
 
 const Stack = createStackNavigator();
 
@@ -48,6 +50,15 @@ const Router = (props) => {
                     component={RentalClientSearchFilter}
                     options={{
                         title: 'What car are you looking?'
+                    }}
+
+                />
+
+                <Stack.Screen
+                    name={'Rental Detailed Post'}
+                    component={RentalPostDetails}
+                    options={{
+                        title: 'Rental Car'
                     }}
 
                 />

@@ -16,8 +16,7 @@ const HomeTabNavigator = (props) => {
         }}>
             <Tab.Screen
                 name={'Map'}
-                //component={MapNavigator}
-                component={RentalPostDetails}
+                component={MapNavigator}
                 options={{
                     tabBarIcon: ({color:string}) => (
                         <MaterialCommunityIcons name='map-search' size={30}/>

@@ -1,12 +1,20 @@
 import React from 'react';
-import { View, Text, Image} from 'react-native';
+import { View, Text, Image, Pressable} from 'react-native';
 import styles from './styles';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-
+import {useNavigation} from '@react-navigation/native';
 
 const Post = (props) => {
 
     const post = props.post;
+
+    const navigation = useNavigation();
+
+    const goToRentalDetailedPost = () => {
+        navigation.navigate('Rental Detailed Post', {postId: post.id})
+    };
+
+    
 
     const getImage = () => {
         if (post.carName === 'MITSUBISHI'){
@@ -24,7 +32,7 @@ const Post = (props) => {
     };
     
     return(
-        <View style={styles.container}>
+        <Pressable onPress={goToRentalDetailedPost} style={styles.container}>
             <Image
                 style={styles.image}
                 source={getImage()}
@@ -50,7 +58,7 @@ const Post = (props) => {
         
 
 
-        </View>
+        </Pressable>
     );
 };
 
