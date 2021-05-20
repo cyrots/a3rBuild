@@ -5,6 +5,8 @@ import MapNavigator from '../navigation/MapNavigator';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import RentalPostDetails from '../screens/RentalPostDetails'
+
 const Tab = createBottomTabNavigator();
 
 const HomeTabNavigator = (props) => {
@@ -14,10 +16,11 @@ const HomeTabNavigator = (props) => {
         }}>
             <Tab.Screen
                 name={'Map'}
-                component={MapNavigator}
+                //component={MapNavigator}
+                component={RentalPostDetails}
                 options={{
                     tabBarIcon: ({color:string}) => (
-                        <MaterialCommunityIcons name='google-maps' size={25}/>
+                        <MaterialCommunityIcons name='map-search' size={30}/>
                     )
                         
                 }}
@@ -27,7 +30,7 @@ const HomeTabNavigator = (props) => {
                 component={HomeScreen}
                 options={{
                     tabBarIcon: ({color:string}) => (
-                        <MaterialCommunityIcons name='calendar-clock' size={25} />
+                        <MaterialCommunityIcons name='calendar-multiselect' size={30} />
                     )
                         
                 }}
@@ -37,7 +40,7 @@ const HomeTabNavigator = (props) => {
                 component={HomeScreen}
                 options={{
                     tabBarIcon: ({color:string}) => (
-                        <Ionicons name='md-chevron-up-circle' size={25}/>
+                        <MaterialIcons name='roofing' size={55} color={'black'} />
                     )
                         
                 }}
@@ -47,7 +50,7 @@ const HomeTabNavigator = (props) => {
                 component={HomeScreen}
                 options={{
                     tabBarIcon: ({color:string}) => (
-                        <Ionicons name='md-notifications-circle' size={25}/>
+                        <Ionicons name='md-notifications-circle' size={30}/>
                     )
                         
                 }}
@@ -57,7 +60,7 @@ const HomeTabNavigator = (props) => {
                 component={HomeScreen}
                 options={{
                     tabBarIcon: ({string}) => (
-                        <MaterialIcons name='person-pin' size={25} />
+                        <MaterialIcons name='person-pin' size={30} />
                     )
                         
                 }}

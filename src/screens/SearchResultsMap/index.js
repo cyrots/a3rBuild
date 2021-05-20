@@ -53,8 +53,8 @@ const SearchResultsMap = (props) => {
                 initialRegion={{
                     latitude: 13.14026548883109,
                     longitude: 123.74157848671625,
-                    latitudeDelta: 0.0922,
-                    longitudeDelta: 0.0421,
+                    latitudeDelta: 0.8,
+                    longitudeDelta: 0.8,
                 }}>
                 {places.map(place => (
                     <CustomMarker 
@@ -76,7 +76,7 @@ const SearchResultsMap = (props) => {
                 renderItem={({item}) => <PostCarouselRentalItem post={item}/>}
                 horizontal
                 showsHorizontalScrollIndicator={false}
-                snapToInterval={200}
+                snapToInterval={150}
                 snapToAlignment={'center'}
                 decelerationRate={'fast'}
                 viewabilityConfig={viewConfig.current}
